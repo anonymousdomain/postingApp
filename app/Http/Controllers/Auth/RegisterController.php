@@ -32,6 +32,7 @@ class RegisterController extends Controller
         User::create($attributes);
         //sign user in 
         auth()->attempt($request->only('email','password'));
+        
         //redirect
         return redirect()->route('dashboard');
     }
