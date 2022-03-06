@@ -27,7 +27,7 @@ class RegisterController extends Controller
         $attributes['password'] = bcrypt($attributes['password']); //hash the password
         User::create($attributes);
         //sign user in 
-
+        auth()->attempt($request->only('email','password'));
         //redirect
         return redirect()->route('dashboard');
     }
