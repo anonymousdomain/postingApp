@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        $posts=Post::paginate(3);
+        $posts=Post::paginate(15);
         return view('posts.index',[
             'posts'=>$posts
         ]);
